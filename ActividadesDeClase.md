@@ -1,6 +1,6 @@
 # Actividades Clase 1
 
-## *Lugo de nstalar MongoDB en ambiente local*
+## *Lugo de instalar MongoDB en ambiente local*
 
 ### *2) Conectarse a MongoDB vía CLI*
 
@@ -19,7 +19,7 @@ use futbolfifa
 ```js
 db.createCollection("players")
 ```
-### *5)Insertar 5 documentos en la collection players con datos básicos (nombre, apellido, posición, fecha de nacimiento, etc).
+### *5)Insertar 5 documentos en la collection players con datos básicos (nombre, apellido, posición, fecha de nacimiento, etc)*
 
 ```js
 db.players.insert([
