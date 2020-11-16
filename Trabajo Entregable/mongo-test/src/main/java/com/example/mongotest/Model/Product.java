@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("products")
 public class Product {
     @Id
-    private Long id;
+    private Integer id;
 
     private String name;
 
@@ -22,11 +22,16 @@ public class Product {
         super();
     }
 
-    public Product(Long id, String name, String description, Integer price, Integer stock) {
+    public Product(Integer id, String name, String description, Integer price, Integer stock) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.stock = stock;
     }
+
+    public Integer getPrice() {
+        return this.price;
+    }
+
 }

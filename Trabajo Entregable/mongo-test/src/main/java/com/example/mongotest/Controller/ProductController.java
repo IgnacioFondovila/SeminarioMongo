@@ -35,7 +35,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    void deletePerson(@PathVariable Long id) {
+    void deletePerson(@PathVariable Integer id) {
         repo.deleteById(id);
     }
 

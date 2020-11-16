@@ -12,7 +12,6 @@ public class SaleController {
 
     private SaleRepository repo;
 
-
     @GetMapping
     public List<Sale> findAll() {
         return this.repo.findAll();

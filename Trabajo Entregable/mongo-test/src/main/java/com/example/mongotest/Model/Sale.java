@@ -4,13 +4,14 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @Document("sales")
 public class Sale {
     @Id
-    private Long id;
+    private Integer id;
 
     private String adress;
 
@@ -22,10 +23,23 @@ public class Sale {
         super();
     }
 
-    public Sale(Long id, String adress, List<Product> products, double totalPrice) {
+    public Sale(Integer id, String adress) {
         this.id = id;
         this.adress = adress;
-        this.products = products;
-        this.totalPrice = totalPrice;
+        this.products = new ArrayList<Product>();
+        this.totalPrice = 0;
+    }
+
+    public void addProduct(Product p) {
+        this.products.add(p);
+        this.totalPrice = getTotalPrice();
+    }
+
+    public double getTotalPrice() {
+        double aux = 0;
+        for(int i = 0; i < this.products.size(); i ++) {
+            aux += products.get(i).getPrice();
+        }
+        return aux;
     }
 }
