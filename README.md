@@ -15,6 +15,7 @@
 #### El siguiente link se puede importar en POSTMAN, o bien, consultarlo en la web. 
 ~~~
 Aquí se obtendrá una colección con los request necesarios para testear la aplicación y sus funcionalidades correspondientes.
+Link a copiar: https://www.postman.com/collections/cf935430b8d33b7b50a6
 ~~~
 - [Link a colección de POSTMAN con Request solicitados](https://www.getpostman.com/collections/cf935430b8d33b7b50a6)
 
