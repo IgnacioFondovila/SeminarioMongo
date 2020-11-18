@@ -19,6 +19,7 @@ public class MongoTestApplication {
     @Bean
     public CommandLineRunner run(ProductRepository productRepository, SaleRepository saleRepository) throws Exception {
         return (String[] args) -> {
+
             Product p1 = new Product(1, "Yerba", "marolio", 20, 100);
             Product p2 = new Product(2, "Alfajor", "guri", 10, 50);
             Product p3 = new Product(3, "Manteca", "mantecol", 30, 120);
@@ -36,6 +37,7 @@ public class MongoTestApplication {
             productRepository.save(p1);
             productRepository.save(p2);
             productRepository.save(p3);
+
         };
     }
 
