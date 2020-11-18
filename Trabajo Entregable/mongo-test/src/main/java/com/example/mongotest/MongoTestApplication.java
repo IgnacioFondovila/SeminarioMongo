@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class MongoTestApplication {
 
@@ -37,6 +39,10 @@ public class MongoTestApplication {
             productRepository.save(p1);
             productRepository.save(p2);
             productRepository.save(p3);
+            /*List<Product> list = productRepository.getProducts();
+            for (Product elem : list) {
+                System.out.println(elem.toString());
+            }*/
 
         };
     }

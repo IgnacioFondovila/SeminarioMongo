@@ -5,12 +5,13 @@ import com.example.mongotest.Repository.ProductRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("products")
 public class ProductController {
 
-    private ProductRepository repo ;
+    private ProductRepository repo;
 
     //Se declara el repo----------------------------------
     public ProductController ( ProductRepository repository){
@@ -24,10 +25,10 @@ public class ProductController {
     }
 
 
-    /*@GetMapping("/{id}")
-    public Product getOne(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public Optional<Product> getOne(@PathVariable Integer id) {
         return repo.findById(id);
-    }*/
+    }
 
     @PostMapping("/")
     public Product newProduct(@RequestBody Product product){
@@ -39,7 +40,7 @@ public class ProductController {
         repo.deleteById(id);
     }
 
-  /*  @PutMapping("/{id}")
+    @PutMapping("/{id}")
     Product replaceProduct(@RequestBody Product newProduct, @PathVariable Long id) {
 
         return repo.findById(id)
@@ -60,7 +61,7 @@ public class ProductController {
                     newProduct.setId(id);
                     return repo.save(newProduct);
                 });
-    }*/
+    }
 
     }
 
