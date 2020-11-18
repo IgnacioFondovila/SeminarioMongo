@@ -1,6 +1,7 @@
 package com.example.mongotest.Controller;
 
 import com.example.mongotest.Model.Sale;
+import com.example.mongotest.Repository.ProductRepository;
 import com.example.mongotest.Repository.SaleRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,13 +13,17 @@ public class SaleController {
 
     private SaleRepository repo;
 
-    @GetMapping
+    public SaleController(SaleRepository repository) {
+        this.repo = repository;
+    }
+
+    @GetMapping("/")
     public List<Sale> findAll() {
         return this.repo.findAll();
     }
 
-    @PostMapping
-    public Sale save(@RequestBody Sale sale) {
+    @PostMapping("/")
+    public Sale newSale(@RequestBody Sale sale) {
         return this.repo.save(sale);
     }
 

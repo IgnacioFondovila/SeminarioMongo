@@ -13,7 +13,7 @@ public class Sale {
     @Id
     private Integer id;
 
-    private String adress;
+    private String address;
 
     private List<Product> products;
 
@@ -23,9 +23,9 @@ public class Sale {
         super();
     }
 
-    public Sale(Integer id, String adress) {
+    public Sale(Integer id, String address) {
         this.id = id;
-        this.adress = adress;
+        this.address = address;
         this.products = new ArrayList<Product>();
         this.totalPrice = 0;
     }
